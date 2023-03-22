@@ -1,0 +1,39 @@
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    url: jdbc:h2:~/keyword;
+    driver-class-name: org.h2.Driver
+    username: kakao
+    password: bank
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+        show_sql: true
+    hibernate:
+      ddl-auto: create
+    open-in-view: false
+
+logging:
+  level:
+    root: INFO
+    com.kakaobank.place.search: DEBUG
+
+external:
+  search-api:
+    kakao:
+      url: https://dapi.kakao.com/v2/local/search/keyword.json
+      rest-api-key: 6635b371b5b67e2d8f4ec726db69dc07
+      size: 5
+      page: 1
+    naver:
+      url: https://openapi.naver.com/v1/search/local.json
+      client-id: rkKM6dvqRbN5k3oAef77
+      secret: H_8PCxXbiS
+      display: 5
+      start: 1

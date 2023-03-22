@@ -1,0 +1,7 @@
+### 장소 검색하기
+GET http://localhost:8080/v1/places?q=kakaobank
+Accept: application/json
+
+### 키워드 목록 조회하기
+GET http://localhost:8080/v1/keywords
+Accept: application/json
